@@ -49,6 +49,19 @@ player = { name: 'johnny', color: :red }
 У вас есть массив имён, например:
 names = %w[ambientsketchbook Erik\ Wollo Brian\ Eno Evangelos\ Papathanassiou Shulman]
 Пробегитесь по ним и выведите только те, длина которых меньше 10 символов и первая буква заглавная. При реализации условий постарайтесь каждое из них обернуть в отдельный метод.
+
+names = %w[ambientsketchbook Erik\ Wollo Brian\ Eno Evangelos\ Papathanassiou shulman]
+
+n = names.inject(0) do |val, name|
+    if name.length < 10 
+        cap = name.to_s
+        if cap[0].match(/[A-Z]/) 
+            puts cap
+        end
+    end    
+end    
+
+
 4. Количество символов в элементе массива
 Посчитайте количество символов в каждом элементе массива:
 [“Ruby”, “Python”, “JavaScript”, “Java”, “.NET”, “HTML”, “Clojure”]
